@@ -139,7 +139,7 @@ plt.show()</code></pre>
 $$loss_i = (m.x_i + c - y_i)^2 \hspace{13em}$$
 $$\frac{dloss_i}{dm} = 2.x_i . (\hat{y_i} - y_i) \hspace{5em} \frac{dloss_i}{dc} = 2.(\hat{y_i} - y_i)$$</p>
 <p>A <b>positive gradient</b> would mean that the hill is sloping <em>upwards</em> so a step in the <em>opposite direction</em> is needed. A <b>negative gradient</b> would mean that the hill is sloping <em>downwards</em> and we should step in that direction. Once we have the <em>gradients</em>, how do we take this <b>'step'?</b></p>
-<p>$$m = m - learning\_rate * gradient \hspace{10em} c = c - learning\_rate * gradient$$</p>
+<p>$$m = m - learning\_rate * gradient_m \hspace{10em} c = c - learning\_rate * gradient_c$$</p>
 <p>The <b>learning rate</b> is an important term which signifies how <em>big</em> the step is. It's multiplied with the gradient and subtracted from \(m\) and \(c\) which ensures that we move in the right direction. It's easier to imagine in a 2D space. Let's pretend that \(c\) doesn't exist and the equation is \(y = m.x\) for the time being.
 </p>
 <div class="row aln-center">
@@ -153,7 +153,7 @@ $$\frac{dloss_i}{dm} = 2.x_i . (\hat{y_i} - y_i) \hspace{5em} \frac{dloss_i}{dc}
 	<img src="./images/linear-regression/Figure_6-1.png"/></span></div>
 	<div class="col-5"><span class="image fit"><img src="./images/linear-regression/Figure_6-2.png"/></span></div>
 </div>
-<p>Using this formula \(m = m - learning\_rate * gradient\), we can see that a <em>negative gradient</em> would result in increasing \(m\) and a <em>positive gradient</em> would reduce \(m\). We also don't want to keep the learning rate <em>too high</em> because it might result in overshooting and completely missing the value of \(m\) for which the loss is minimum. But if the learning rate is <em>too small</em>, then it will take a long time for \(m\) to converge.</p>
+<p>Using this formula \(m = m - learning\_rate * gradient_m\), we can see that a <em>negative gradient</em> would result in increasing \(m\) and a <em>positive gradient</em> would reduce \(m\). We also don't want to keep the learning rate <em>too high</em> because it might result in overshooting and completely missing the value of \(m\) for which the loss is minimum. But if the learning rate is <em>too small</em>, then it will take a long time for \(m\) to converge.</p>
 <center><h2 style="margin-bottom: 0">Good Learning Rate</h2></center>
 <div class="row aln-center">
 	<div class="col-5"><span class="image fit"><img src="./images/linear-regression/Figure_7-1.png"/></span></div>
